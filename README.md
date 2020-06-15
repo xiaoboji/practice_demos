@@ -1,2 +1,2 @@
-# practice_demos
+# practice-demos
 practice demos,such as IDEA, Temp program

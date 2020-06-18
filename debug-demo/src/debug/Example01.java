@@ -7,6 +7,7 @@ package debug;
  */
 public class Example01 {
 
+    public static boolean hello = false;
     static class CustomException extends RuntimeException{
         public CustomException(String message) {
             super(message);
@@ -14,13 +15,13 @@ public class Example01 {
     }
 
     private static void helloInetllij(){
-        System.out.println("我是一只小小小鸟");
-        System.out.println("想要飞却怎么样也飞不高!");
+        System.out.println("Hello");
+        System.out.println("How are you!");
         throw new CustomException("I'm sorry!");
     }
 
     public static void main(String[] args) {
         helloInetllij();
-        System.out.println("No 怕不了木");
+        System.out.println("Good Bye");
     }
 }

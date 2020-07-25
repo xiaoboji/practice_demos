@@ -10,6 +10,7 @@ import java.util.BitSet;
  * @create: 2020-07-23 00:41
  */
 public class Sieve {
+  // main
   public static void main(String[] args) {
     int n = 2000000;
     long start = System.currentTimeMillis();

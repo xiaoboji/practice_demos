@@ -15,6 +15,7 @@ import javax.swing.JPanel;
  * @create: 2020-07-27 23:37
  */
 public class Bounce {
+
   public static void main(String[] args) {
     EventQueue.invokeLater(
         () -> {

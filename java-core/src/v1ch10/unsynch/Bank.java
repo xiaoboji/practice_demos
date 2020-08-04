@@ -32,6 +32,7 @@ public class Bank {
    * @param amount the amount
    */
   public void transfer(int from, int to, double amount) {
+
     if (accounts[from] < amount) {
       return;
     }

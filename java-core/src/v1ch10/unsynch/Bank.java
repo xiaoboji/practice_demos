@@ -20,6 +20,7 @@ public class Bank {
    * @param initialBalance the initial balance
    */
   public Bank(int n, double initialBalance) {
+
     this.accounts = new double[n];
     Arrays.fill(accounts, initialBalance);
   }

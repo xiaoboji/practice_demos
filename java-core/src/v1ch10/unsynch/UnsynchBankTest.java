@@ -9,6 +9,7 @@ package v1ch10.unsynch;
  * @create: 2020 -08-01 23:27
  */
 public class UnsynchBankTest {
+
   /** The constant NACCOUTS. */
   public static final int NACCOUTS = 100;
 

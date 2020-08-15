@@ -50,6 +50,7 @@ public class Bank {
    * @return the double
    */
   public double getTotalBalance() {
+
     double sum = 0;
     for (double a : accounts) {
       sum += a;

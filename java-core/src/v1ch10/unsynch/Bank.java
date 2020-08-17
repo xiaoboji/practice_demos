@@ -37,6 +37,7 @@ public class Bank {
     if (accounts[from] < amount) {
       return;
     }
+
     System.out.print(Thread.currentThread());
     accounts[from] -= amount;
     System.out.printf(" %10.2f from %d to %d ", amount, from, to);

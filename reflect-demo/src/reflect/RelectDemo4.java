@@ -14,6 +14,7 @@ public class RelectDemo4 {
   public static void main(String[] args)
       throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
           IllegalAccessException {
+
     Class cls1 = Class.forName("reflect.Dog");
     // 执行方法
     System.out.println("---------------执行方法-----------------");

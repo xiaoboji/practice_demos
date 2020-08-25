@@ -1,4 +1,4 @@
-package v1ch10.bounce;
+package v1ch14.bounce;
 
 import java.awt.BorderLayout;
 import java.awt.Container;

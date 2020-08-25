@@ -1,4 +1,4 @@
-package v1ch10.bounceThread;
+package v1ch14.bounceThread;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -7,8 +7,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import v1ch10.bounce.Ball;
-import v1ch10.bounce.BallComponent;
+import v1ch14.bounce.Ball;
+import v1ch14.bounce.BallComponent;
 
 /**
  * @program: practice-demos

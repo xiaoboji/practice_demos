@@ -1,4 +1,4 @@
-package v1ch14.ForkJoinTest;
+package v1ch14.ForkJoin;
 
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;

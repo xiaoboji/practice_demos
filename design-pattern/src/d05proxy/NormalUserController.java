@@ -8,17 +8,11 @@ package d05proxy;
  * @author: xiaoboji
  * @create: 2020 -08-29 00:49
  */
-public class UserController {
-
-  // 依赖注入
+public class NormalUserController {
+  /** 依赖注入 */
   private CountCollector countCollector;
 
-  /**
-   * Instantiates a new User controller.
-   *
-   * @param countCollector the count collector
-   */
-  public UserController(CountCollector countCollector) {
+  public NormalUserController(CountCollector countCollector) {
     this.countCollector = countCollector;
   }
 
@@ -34,8 +28,7 @@ public class UserController {
 
     System.out.println("处理逻辑执行···");
     long endTimeStamp = System.currentTimeMillis();
-    long responseTime = endTimeStamp - startTimestamp;
-    RequestInfo requestInfo = new RequestInfo("login", responseTime, startTimestamp);
+    RequestInfo requestInfo = new RequestInfo("login", endTimeStamp, startTimestamp);
     countCollector.recordRequest(requestInfo);
 
     return true;
@@ -52,8 +45,7 @@ public class UserController {
     long startTimestamp = System.currentTimeMillis();
     System.out.println("处理逻辑执行···");
     long endTimeStamp = System.currentTimeMillis();
-    long responseTime = endTimeStamp - startTimestamp;
-    RequestInfo requestInfo = new RequestInfo("register", responseTime, startTimestamp);
+    RequestInfo requestInfo = new RequestInfo("register", endTimeStamp, startTimestamp);
     countCollector.recordRequest(requestInfo);
     return true;
   }

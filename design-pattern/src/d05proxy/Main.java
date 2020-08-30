@@ -1,8 +1,8 @@
 package d05proxy;
 
+import d05proxy.dynamic.CountCollectorProxy;
 import d05proxy.interfaceImpl.IUserController;
 import d05proxy.interfaceImpl.UserController;
-import d05proxy.interfaceImpl.UserControllerProxy;
 
 /**
  * @program: practice-demos
@@ -12,7 +12,11 @@ import d05proxy.interfaceImpl.UserControllerProxy;
  */
 public class Main {
   public static void main(String[] args) throws InterruptedException {
-    IUserController userController = new UserControllerProxy(new UserController());
-    userController.login("xiaoboji", "123");
+    //    IUserController userController = new UserControllerProxy(new UserController());
+    //    userController.login("xiaoboji", "123");
+
+    CountCollectorProxy proxy = new CountCollectorProxy();
+    IUserController userController = (IUserController) proxy.createProxy(new UserController());
+    userController.login("xiaoboji1", "123");
   }
 }

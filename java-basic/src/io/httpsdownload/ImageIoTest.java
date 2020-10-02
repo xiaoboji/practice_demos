@@ -16,12 +16,5 @@ public class ImageIoTest {
             "https://static001.geekbang.org/resource/image/f6/d5/f6afb18cec369e4ef08e5231668813d5.jpg",
             "F:\\temp\\image_method1.jpg");
     System.out.println(file1.getPath());
-
-    // method2
-    File file2 =
-        HttpsUtils.downloadFile(
-            "https://static001.geekbang.org/resource/image/f6/d5/f6afb18cec369e4ef08e5231668813d5.jpg",
-            "F:\\temp\\image_method2.jpg");
-    System.out.println(file2.getPath());
   }
 }

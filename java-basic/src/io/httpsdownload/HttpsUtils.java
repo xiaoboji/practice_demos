@@ -4,12 +4,8 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
@@ -22,63 +18,6 @@ import javax.net.ssl.TrustManager;
  * @author xiaoboji
  */
 public class HttpsUtils {
-
-  /**
-   * method1:下载文件到本地
-   *
-   * @param fileUrl 远程地址
-   * @param fileLocal 本地路径
-   * @throws Exception
-   */
-  public static File downloadFile(String fileUrl, String fileLocal) throws IOException {
-    // 对本地文件进行命名
-    File file = new File(fileLocal);
-
-    SSLContext sslcontext = null;
-    try {
-      sslcontext = SSLContext.getInstance("SSL", "SunJSSE");
-    } catch (NoSuchAlgorithmException e) {
-      e.printStackTrace();
-    } catch (NoSuchProviderException e) {
-      e.printStackTrace();
-    }
-    try {
-      sslcontext.init(
-          null, new TrustManager[] {new X509TrustUtiil()}, new java.security.SecureRandom());
-    } catch (KeyManagementException e) {
-      e.printStackTrace();
-    }
-    URL url = new URL(fileUrl);
-    HostnameVerifier ignoreHostnameVerifier =
-        new HostnameVerifier() {
-          @Override
-          public boolean verify(String s, SSLSession sslsession) {
-            System.out.println("WARNING: Hostname is not matched for cert.");
-            return true;
-          }
-        };
-    HttpsURLConnection.setDefaultHostnameVerifier(ignoreHostnameVerifier);
-    HttpsURLConnection.setDefaultSSLSocketFactory(sslcontext.getSocketFactory());
-    HttpsURLConnection urlCon = (HttpsURLConnection) url.openConnection();
-    urlCon.setConnectTimeout(6000);
-    urlCon.setReadTimeout(6000);
-    int code = urlCon.getResponseCode();
-    if (code != HttpURLConnection.HTTP_OK) {
-      throw new IOException("文件读取失败");
-    }
-    // 读文件流
-    DataInputStream in = new DataInputStream(urlCon.getInputStream());
-    DataOutputStream out = new DataOutputStream(new FileOutputStream(file));
-    byte[] buffer = new byte[2048];
-    int count = 0;
-    while ((count = in.read(buffer)) > 0) {
-      out.write(buffer, 0, count);
-    }
-    out.close();
-    in.close();
-    return file;
-  }
-
   /**
    * method2: 下载文件到本地(支持https)
    *

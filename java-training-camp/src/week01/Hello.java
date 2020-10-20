@@ -24,6 +24,8 @@ public class Hello {
     for (int index = 0; index < 10; index++) {
       i++;
       j--;
+      ++multiply;
+      --divide;
     }
   }
 }

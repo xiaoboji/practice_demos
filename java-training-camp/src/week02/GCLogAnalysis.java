@@ -8,6 +8,7 @@ public class GCLogAnalysis {
   private static Random random = new Random();
 
   public static void main(String[] args) {
+
     // 当前毫秒时间戳
     long startMillis = System.currentTimeMillis();
     // 持续运行毫秒数; 可根据需要进行修改

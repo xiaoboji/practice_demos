@@ -1,4 +1,4 @@
-package java0.nio01.netty;
+package nio01.nio01.netty;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.PooledByteBufAllocator;

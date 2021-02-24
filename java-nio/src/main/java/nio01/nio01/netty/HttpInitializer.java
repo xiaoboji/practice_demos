@@ -1,4 +1,4 @@
-package java0.nio01.netty;
+package nio01.nio01.netty;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
